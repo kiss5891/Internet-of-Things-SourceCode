@@ -26,7 +26,7 @@
 	EX : PK_Lockers
 	索引的值不會重複像是身份證
 
- ##外部索引建(Foreign Key)
+##外部索引建(Foreign Key)
 	FK_<TableName1>_<TableName2>
 	FK_<資料庫A>_<資料庫B>
   	EX : FK_Users_Companys
