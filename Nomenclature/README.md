@@ -14,8 +14,7 @@
 	EX : TR_Lockers_Add
 	當Lockers資料表做刪除的動作時就會去執行
 
-
- 索引(Index)
+索引(Index)
 	IX_<TableName>_<columns separated by _>
 	IX_<資料表名稱>_<欄位名稱>
  	EX : IX_Lockers_ID
