@@ -1,7 +1,8 @@
 #資料庫命名規則
-##資料表名稱 : 大駝峰式 + 結尾加s
+###資料表名稱 : 大駝峰式 + 結尾加s
+'''
 	EX ： Lockers
-
+'''
 ##預存程序 (Stored procedures)
 	sp<App Name>_[<Group Name >_]<Action><table/logical instance>
 	sp<應用程式名稱>_[<群組名稱>_]<動作><table/logical instance>
