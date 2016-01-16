@@ -30,7 +30,7 @@
 	FK_<TableName1>_<TableName2>
 	FK_<資料庫A>_<資料庫B>
   	EX : FK_Users_Companys
-	可以從Users的資料庫找到Companys資料庫的值
+  	可以以從Users的資料庫找到Companys資料庫的值
 
 ##預設值(Default)
 	DF_<TableName>_<ColumnName>
