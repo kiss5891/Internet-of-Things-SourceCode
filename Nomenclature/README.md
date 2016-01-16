@@ -23,8 +23,8 @@
 	預設物品編號
 
 ##索引(Index)
-	IX_<TableName>_<columns separated by _>
-	IX_<資料表名稱>_<欄位名稱>
+	ix<TableName>_<columns separated by _>
+	ix<資料表名稱>_<欄位名稱>
  	EX : ixLockers_ID
 	給一個欄位索引可以加速所尋該欄位的速度
 #資料欄位命名法則
