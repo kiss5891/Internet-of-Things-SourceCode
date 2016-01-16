@@ -1,14 +1,15 @@
 #資料庫命名規則
 ###資料表名稱 : 大駝峰式 + 結尾加s
-'''
+```
 	EX ： Lockers
-'''
-##預存程序 (Stored procedures)
+```
+###預存程序 (Stored procedures)
+```
 	sp<App Name>_[<Group Name >_]<Action><table/logical instance>
 	sp<應用程式名稱>_[<群組名稱>_]<動作><table/logical instance>
 	EX : spLockers_Admin_Add
 	沒有特別去選擇就會優先去執行
-
+```
 ##觸發程序 (Triggers)
 	tr<TableName>_<action>
 	tr<資料表名稱>_<動作>
