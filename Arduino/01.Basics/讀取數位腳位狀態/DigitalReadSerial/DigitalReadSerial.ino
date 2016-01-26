@@ -3,7 +3,7 @@
  讀取腳位 2 當輸入,列印結果到 serial monitor
 
  這個範例程式碼是在公共區域.
- */
+*/
 
 int pushButton = 2;                           // 數字腳位 2 連接到一個按鈕. 給他一個名字
 void setup() {                                // 當按下 reset 設置例行程式並運行一次
