@@ -21,35 +21,35 @@ This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/ButtonStateChange
 
- */
+*/
 
-const int  buttonPin = 2;               // 按鈕連接的引腳
-const int ledPin = 13;                  // LED 連接的引腳
+const int  buttonPin = 2;                                 // 按鈕連接的引腳
+const int ledPin = 13;                                    // LED 連接的引腳
 
-int buttonPushCounter = 0;              // 計算按了幾次按鈕
-int buttonState = 0;                    // 記錄按鈕狀態
-int lastButtonState = 0;                // 按鈕上一個狀態
+int buttonPushCounter = 0;                                // 計算按了幾次按鈕
+int buttonState = 0;                                      // 記錄按鈕狀態
+int lastButtonState = 0;                                  // 按鈕上一個狀態
 
 void setup() {
-  pinMode(buttonPin, INPUT);                        // 初始化按鈕引腳作為輸入
-  pinMode(ledPin, OUTPUT);                          // 初始化 LED 引腳作為輸出
-  Serial.begin(9600);                                // 初始化序列通訊
+  pinMode(buttonPin, INPUT);                              // 初始化按鈕引腳作為輸入
+  pinMode(ledPin, OUTPUT);                                // 初始化 LED 引腳作為輸出
+  Serial.begin(9600);                                     // 初始化序列通訊
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin);             // 讀取 buttonPin
-  if (buttonState != lastButtonState) {             // 比較按鈕當前和以前狀態
+  buttonState = digitalRead(buttonPin);                   // 讀取 buttonPin
+  if (buttonState != lastButtonState) {                   // 比較按鈕當前和以前狀態
     if (buttonState == HIGH) {                          
-      buttonPushCounter++;                                 // 如果狀態被改變, 增加計數
-      Serial.println("on");                                 // 如果當前狀態是 HIGH 則按鈕從 off 到 on
+      buttonPushCounter++;                                // 如果狀態被改變, 增加計數
+      Serial.println("on");                               // 如果當前狀態是 HIGH 則按鈕從 off 到 on
       Serial.print("number of button pushes:  ");
       Serial.println(buttonPushCounter);
     } else {
-      Serial.println("off");                                // 如果當前狀態是 LOW 則按鈕從 on 到 off:
+      Serial.println("off");                              // 如果當前狀態是 LOW 則按鈕從 on 到 off:
     }
-    delay(50);                                          // 延遲一下下避免反彈
+    delay(50);                                            // 延遲一下下避免反彈
   }
-  lastButtonState = buttonState;                   // 為了下一次的迴圈, 儲存按鈕上一個狀態
+  lastButtonState = buttonState;                          // 為了下一次的迴圈, 儲存按鈕上一個狀態
 
 
 /* 
@@ -61,14 +61,4 @@ void loop() {
   } else {
     digitalWrite(ledPin, LOW);
   }
-
 }
-
-
-
-
-
-
-
-
-
