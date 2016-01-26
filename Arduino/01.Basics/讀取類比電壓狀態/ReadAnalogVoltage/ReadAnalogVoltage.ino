@@ -7,12 +7,12 @@
   這個例子的程式碼在公共領域.
 */
 
-void setup() {            // 當你按下 reset 設置程序運行一次
-  Serial.begin(9600);                              // 初始化序列通訊為 9600bps
+void setup() {                                        // 當你按下 reset 設置程序運行一次
+  Serial.begin(9600);                                 // 初始化序列通訊為 9600bps
 }
 
-void loop() {             // 重複運行循環程序
-  int sensorValue = analogRead(A0);               // 讀取輸入在 A0:
-  float voltage = sensorValue * (5.0 / 1023.0);   // 讀取類比 (從 0 - 1023) 轉換成電壓 (0 - 5V)
-  Serial.println(voltage);                         // 印出讀取的值
+void loop() {                                         // 重複運行循環程序
+  int sensorValue = analogRead(A0);                   // 讀取輸入在 A0:
+  float voltage = sensorValue * (5.0 / 1023.0);       // 讀取類比 (從 0 - 1023) 轉換成電壓 (0 - 5V)
+  Serial.println(voltage);                            // 印出讀取的值
 }
