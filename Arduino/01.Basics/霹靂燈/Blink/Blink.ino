@@ -11,15 +11,15 @@
 
   在2014年5月8日
   由 Scott Fitzgerald 修改
- */
+*/
 
-void setup() {          // 當按下 reset 或是 power the board 執行一次運行功能
-  pinMode(13, OUTPUT);      // 初始化將13腳設為輸出
+void setup() {                  // 當按下 reset 或是 power the board 執行一次運行功能
+  pinMode(13, OUTPUT);          // 初始化將13腳設為輸出
 }
 
-void loop() {           // 這個重複迴圈會不斷運行
-  digitalWrite(13, HIGH);   // 讓 LED 亮 (HIGH 是電壓提升)
-  delay(1000);              // 延遲一秒
-  digitalWrite(13, LOW);    // 通過電壓低讓 LED 暗
-  delay(1000);              // 延遲一秒
+void loop() {                   // 這個重複迴圈會不斷運行
+  digitalWrite(13, HIGH);       // 讓 LED 亮 (HIGH 是電壓提升)
+  delay(1000);                  // 延遲一秒
+  digitalWrite(13, LOW);        // 通過電壓低讓 LED 暗
+  delay(1000);                  // 延遲一秒
 }
