@@ -18,22 +18,22 @@
  This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
- */
+*/
 
-const int ledPin =  13;               // 這個號碼是 LED 的引腳
+const int ledPin =  13;                                     // 這個號碼是 LED 的引腳
 
-int ledState = LOW;                   // ledState 用來設置 LED
+int ledState = LOW;                                         // ledState 用來設置 LED
 
 /*
   通常, 你應該使用 "unsigned long" 為變數保持時間
   這個值很快會儲存成一個太大的 int
 */
-unsigned long previousMillis = 0;     // 將儲存最後一次 LED 被更新
+unsigned long previousMillis = 0;                           // 將儲存最後一次 LED 被更新
 
-const long interval = 1000;           // interval 代表閃爍一次 (毫秒)
+const long interval = 1000;                                 // interval 代表閃爍一次 (毫秒)
 
 void setup() {
-  pinMode(ledPin, OUTPUT);               // 設置引腳為輸出
+  pinMode(ledPin, OUTPUT);                                  // 設置引腳為輸出
 }
 
 void loop() {
@@ -47,13 +47,13 @@ void loop() {
   unsigned long currentMillis = millis();
 
   if (currentMillis - previousMillis >= interval) {
-    previousMillis = currentMillis;     // 保存最後一次閃爍LED的時間
-    if (ledState == LOW) {              // 如果 LED 燈熄滅就打開, 反之亦然
+    previousMillis = currentMillis;                         // 保存最後一次閃爍LED的時間
+    if (ledState == LOW) {                                  // 如果 LED 燈熄滅就打開, 反之亦然
       ledState = HIGH;
     } else {
       ledState = LOW;
     }
-    digitalWrite(ledPin, ledState);     // 設置 LED 和可變 ledState
+    digitalWrite(ledPin, ledState);                         // 設置 LED 和可變 ledState
   }
 }
 
