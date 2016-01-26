@@ -24,24 +24,18 @@
 
  */
 
-int sensorPin = A0;    // 選擇可變電阻的輸入引腳
-int ledPin = 13;      // 選擇 LED 的引腳
-int sensorValue = 0;  // 變數用來儲存 sensor 的值
+int sensorPin = A0;     // 選擇可變電阻的輸入引腳
+int ledPin = 13;        // 選擇 LED 的引腳
+int sensorValue = 0;    // 變數用來儲存 sensor 的值
 
 void setup() {
-  // 宣告 ledPin 為 OUTPUT:
-  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);                      // 宣告 ledPin 為 OUTPUT
 }
 
 void loop() {
-  // 從 sensor 讀取值:
-  sensorValue = analogRead(sensorPin);
-  // 讓 ledPin 亮
-  digitalWrite(ledPin, HIGH);
-  // 停止 <sensorValue> 毫秒:
-  delay(sensorValue);
-  // 讓 ledPin 暗:
-  digitalWrite(ledPin, LOW);
-  // 停止 <sensorValue> 毫秒:
-  delay(sensorValue);
+  sensorValue = analogRead(sensorPin);          // 從 sensor 讀取值
+  digitalWrite(ledPin, HIGH);                   // 讓 ledPin 亮
+  delay(sensorValue);                           // 停止 <sensorValue> 毫秒
+  digitalWrite(ledPin, LOW);                    // 讓 ledPin 暗
+  delay(sensorValue);                           // 停止 <sensorValue> 毫秒
 }

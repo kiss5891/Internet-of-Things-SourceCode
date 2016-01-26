@@ -18,33 +18,29 @@
 
  */
 
-// 這些常數不會改變.  它們用來給引腳當名稱:
-const int analogInPin = A0;  // 可變電阻連接類比輸出引腳
-const int analogOutPin = 9; // LED 連接類比輸出引腳
+const int analogInPin = A0;   // 可變電阻連接類比輸出引腳
+const int analogOutPin = 9;   // LED 連接類比輸出引腳
 
-int sensorValue = 0;        // 從 pot 讀取的值
-int outputValue = 0;        // 從 PWM 輸出的值 (類比輸出)
+int sensorValue = 0;          // 從 pot 讀取的值
+int outputValue = 0;          // 從 PWM 輸出的值 (類比輸出)
 
 void setup() {
-  // 初始化序列通訊為 9600 bps:
-  Serial.begin(9600);
+  Serial.begin(9600);                                  // 初始化序列通訊為 9600 bps
 }
 
 void loop() {
-  // 讀取類比的值:
-  sensorValue = analogRead(analogInPin);
-  // map 類比輸出的範圍:
-  outputValue = map(sensorValue, 0, 1023, 0, 255);
-  // 改變類比輸出的值:
-  analogWrite(analogOutPin, outputValue);
-
-  // 列印結果到 serial monitor:
-  Serial.print("sensor = ");
+  sensorValue = analogRead(analogInPin);              // 讀取類比的值
+  outputValue = map(sensorValue, 0, 1023, 0, 255);    // map 類比輸出的範圍
+  analogWrite(analogOutPin, outputValue);             // 改變類比輸出的值
+  
+  Serial.print("sensor = ");                           // 列印結果到 serial monitor
   Serial.print(sensorValue);
   Serial.print("\t output = ");
   Serial.println(outputValue);
 
-  // 在下一個迴圈之前等待 2 毫秒
-  // 用於在上次讀取之後類比數字轉換的安定:
+/*
+  在下一個迴圈之前等待 2 毫秒
+  用於在上次讀取之後類比數字轉換的安定
+*/
   delay(2);
 }

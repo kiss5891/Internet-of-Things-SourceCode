@@ -1,5 +1,5 @@
 /*
-  按鈕
+ 按鈕
 
  按一個連接到引腳 2 的按鈕, 打開和關閉一個連接到引腳 13 的發光二極管(LED).
 
@@ -22,31 +22,26 @@
  http://www.arduino.cc/en/Tutorial/Button
  */
 
-// 常數是不會改變的. 他們使用來設置引腳:
 const int buttonPin = 2;     // 這個數字是按鈕的引腳
 const int ledPin =  13;      // 這個數字是 LED 的引腳
 
-// 變數將改變:
 int buttonState = 0;         // 變數用來讀取按鈕狀態
 
 void setup() {
-  // 初始化 ledPin 作為輸出:
-  pinMode(ledPin, OUTPUT);
-  // 初始化 buttonPin 作為輸入:
-  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);                // 初始化 ledPin 作為輸出
+  pinMode(buttonPin, INPUT);              // 初始化 buttonPin 作為輸入
 }
 
 void loop() {
-  // 讀取按鈕值的狀態:
-  buttonState = digitalRead(buttonPin);
+  buttonState = digitalRead(buttonPin);   // 讀取按鈕值的狀態
 
-  // 檢查如果按下按鈕.
-  // 如果是, 則 buttonState 為 HIGH:
+/*
+  檢查如果按下按鈕.
+  如果是, 則 buttonState 為 HIGH
+*/
   if (buttonState == HIGH) {
-    // LED 亮:
-    digitalWrite(ledPin, HIGH);
+    digitalWrite(ledPin, HIGH);           // LED 亮
   } else {
-    // LED 暗:
-    digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin, LOW);            // LED 暗
   }
 }

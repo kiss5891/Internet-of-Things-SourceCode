@@ -13,32 +13,26 @@
   This example code is in the public domain.
 
  */
-// 這些常數不會改變.  它們用來給引腳當名稱:
+
 const int lowestPin = 2;
 const int highestPin = 13;
 
-
 void setup() {
-  // 設置引腳 2 到 13 為輸出:
   for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {
-    pinMode(thisPin, OUTPUT);
+    pinMode(thisPin, OUTPUT);                                           // 設置引腳 2 到 13 為輸出
   }
 }
 
 void loop() {
-  // 循環引腳:
-  for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {
-    // 控制 thisPin 的 LED 亮度從暗到亮:
-    for (int brightness = 0; brightness < 255; brightness++) {
+  for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {     // 循環引腳
+    for (int brightness = 0; brightness < 255; brightness++) {              // 控制 thisPin 的 LED 亮度從暗到亮
       analogWrite(thisPin, brightness);
       delay(2);
     }
-    // 控制 thisPin 的 LED 亮度從亮到暗:
-    for (int brightness = 255; brightness >= 0; brightness--) {
+    for (int brightness = 255; brightness >= 0; brightness--) {             // 控制 thisPin 的 LED 亮度從亮到暗
       analogWrite(thisPin, brightness);
       delay(2);
     }
-    // LED 之間暫停:
-    delay(100);
+    delay(100);                                                         // LED 之間暫停
   }
 }

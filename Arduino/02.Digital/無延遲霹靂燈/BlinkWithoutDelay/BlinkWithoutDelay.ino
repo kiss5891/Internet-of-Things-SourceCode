@@ -20,45 +20,40 @@
  http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
  */
 
-// 常數不會改變. 用來設置引腳號碼 :
-const int ledPin =  13;      // 這個號碼是 LED 的引腳
+const int ledPin =  13;               // 這個號碼是 LED 的引腳
 
-// 變數會改變 :
-int ledState = LOW;             // ledState 用來設置 LED
+int ledState = LOW;                   // ledState 用來設置 LED
 
-// 通常, 你應該使用 "unsigned long" 為變數保持時間
-// 這個值很快會儲存成一個太大的 int
-unsigned long previousMillis = 0;        // 將儲存最後一次 LED 被更新
+/*
+  通常, 你應該使用 "unsigned long" 為變數保持時間
+  這個值很快會儲存成一個太大的 int
+*/
+unsigned long previousMillis = 0;     // 將儲存最後一次 LED 被更新
 
-// 常數不會改變 :
 const long interval = 1000;           // interval 代表閃爍一次 (毫秒)
 
 void setup() {
-  // 設置引腳為輸出 :
-  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);               // 設置引腳為輸出
 }
 
 void loop() {
-  // 這裡放你全部需要運行的程式碼.
-
-  // 檢查看看 LED 燈是不是時後閃爍; 那就是說,
-  // 如果當前時間比上一次閃爍時間更大
-  // 該時間要讓 LED 燈閃爍
+/*
+  這裡放你全部需要運行的程式碼.
+    
+  檢查看看 LED 燈是不是時後閃爍; 那就是說,
+  如果當前時間比上一次閃爍時間更大
+  該時間要讓 LED 燈閃爍
+*/
   unsigned long currentMillis = millis();
 
   if (currentMillis - previousMillis >= interval) {
-    // 保存最後一次閃爍LED的時間
-    previousMillis = currentMillis;
-
-    // 如果 LED 燈熄滅就打開, 反之亦然:
-    if (ledState == LOW) {
+    previousMillis = currentMillis;     // 保存最後一次閃爍LED的時間
+    if (ledState == LOW) {              // 如果 LED 燈熄滅就打開, 反之亦然
       ledState = HIGH;
     } else {
       ledState = LOW;
     }
-
-    // 設置 LED 和可變 ledState:
-    digitalWrite(ledPin, ledState);
+    digitalWrite(ledPin, ledState);     // 設置 LED 和可變 ledState
   }
 }
 

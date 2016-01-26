@@ -20,27 +20,24 @@
  */
 
 void setup() {
-  //啟動序列連接
-  Serial.begin(9600);
-  //設置引腳 2 為輸入並使用內部上拉電阻
-  pinMode(2, INPUT_PULLUP);
+  Serial.begin(9600);              // 啟動序列連接
+  pinMode(2, INPUT_PULLUP);       // 設置引腳 2 為輸入並使用內部上拉電阻
   pinMode(13, OUTPUT);
-
 }
 
 void loop() {
-  //讀取按鈕狀態儲存到變數
-  int sensorVal = digitalRead(2);
-  //印出按鈕的值
-  Serial.println(sensorVal);
+  int sensorVal = digitalRead(2); // 讀取按鈕狀態儲存到變數
+  Serial.println(sensorVal);       // 印出按鈕的值
 
-  // 記住 pullup 是按鈕電路被反轉
-  // 當它被打開它就是 HIGH, 按下按鈕就是 LOW.
-  // 當按下按鈕就打開引腳 13, 反之就是關:
+/*
+ 記住 pullup 是按鈕電路被反轉
+ 當它被打開它就是 HIGH, 按下按鈕就是 LOW.
+ 當按下按鈕就打開引腳 13, 反之就是關
+*/
   if (sensorVal == HIGH) {
-    digitalWrite(13, LOW);
+    digitalWrite(13, LOW);        // 讓 LED 暗
   } else {
-    digitalWrite(13, HIGH);
+    digitalWrite(13, HIGH);       // 讓 LED 亮
   }
 }
 

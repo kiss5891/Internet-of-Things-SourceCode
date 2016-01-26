@@ -1,5 +1,5 @@
 /*
-  鍵盤發聲器
+ 鍵盤發聲器
 
  不斷改變類比輸入來播放改變高音
 
@@ -20,26 +20,20 @@ This example code is in the public domain.
 
 #include "pitches.h"
 
-const int threshold = 10;    // 生成一個數為感測器的最小讀數
+const int threshold = 10;     // 生成一個數為感測器的最小讀數
 
-// notes 相當於三個感測器:
-int notes[] = {
+int notes[] = {               // notes 相當於三個感測器
   NOTE_A4, NOTE_B4, NOTE_C3
 };
 
 void setup() {
-
 }
 
 void loop() {
   for (int thisSensor = 0; thisSensor < 3; thisSensor++) {
-    // 得到一個感測器的讀數:
-    int sensorReading = analogRead(thisSensor);
-
-    // 如果感測器讀到的值夠大:
-    if (sensorReading > threshold) {
-      // 播放其屬的音調:
-      tone(8, notes[thisSensor], 20);
+    int sensorReading = analogRead(thisSensor);     // 得到一個感測器的讀數
+    if (sensorReading > threshold) {                // 如果感測器讀到的值夠大
+      tone(8, notes[thisSensor], 20);                 // 播放其屬的音調
     }
   }
 }

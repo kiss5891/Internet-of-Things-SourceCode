@@ -7,21 +7,17 @@
   如果你不確定你的 Arduino 型號的哪隻腳位連接到 on-board LED,
   查詢文件在 http://www.arduino.cc
 
-  這個範例程式碼是在公共區域.
+  This example code is in the public domain.
 
   在2014年5月8日
   由 Scott Fitzgerald 修改
  */
 
-
-// 當按下 reset 或是 power the board 執行一次運行功能
-void setup() {
-  // 初始化將13腳設為輸出
-  pinMode(13, OUTPUT);
+void setup() {          // 當按下 reset 或是 power the board 執行一次運行功能
+  pinMode(13, OUTPUT);      // 初始化將13腳設為輸出
 }
 
-// 這個重複迴圈會不斷運行
-void loop() {
+void loop() {           // 這個重複迴圈會不斷運行
   digitalWrite(13, HIGH);   // 讓 LED 亮 (HIGH 是電壓提升)
   delay(1000);              // 延遲一秒
   digitalWrite(13, LOW);    // 通過電壓低讓 LED 暗
