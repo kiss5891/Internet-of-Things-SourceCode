@@ -20,12 +20,12 @@
  This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/Button
- */
+*/
 
-const int buttonPin = 2;     // 這個數字是按鈕的引腳
-const int ledPin =  13;      // 這個數字是 LED 的引腳
+const int buttonPin = 2;                  // 這個數字是按鈕的引腳
+const int ledPin =  13;                   // 這個數字是 LED 的引腳
 
-int buttonState = 0;         // 變數用來讀取按鈕狀態
+int buttonState = 0;                      // 變數用來讀取按鈕狀態
 
 void setup() {
   pinMode(ledPin, OUTPUT);                // 初始化 ledPin 作為輸出
