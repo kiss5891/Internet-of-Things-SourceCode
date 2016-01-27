@@ -22,11 +22,11 @@
 
  http://www.arduino.cc/en/Tutorial/AnalogInput
 
- */
+*/
 
-int sensorPin = A0;     // 選擇可變電阻的輸入引腳
-int ledPin = 13;        // 選擇 LED 的引腳
-int sensorValue = 0;    // 變數用來儲存 sensor 的值
+int sensorPin = A0;                             // 選擇可變電阻的輸入引腳
+int ledPin = 13;                                // 選擇 LED 的引腳
+int sensorValue = 0;                            // 變數用來儲存 sensor 的值
 
 void setup() {
   pinMode(ledPin, OUTPUT);                      // 宣告 ledPin 為 OUTPUT
