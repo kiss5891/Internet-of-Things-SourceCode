@@ -33,11 +33,11 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) {                     // 如果有收到資料
     incomingByte = Serial.read();                   // 讀近來的資料放在 incomingByte
-    if (incomingByte == 'H') {                     // 如果讀進來的資料是 H
-      digitalWrite(ledPin, HIGH);                  // LED 亮
+    if (incomingByte == 'H') {                      // 如果讀進來的資料是 H
+      digitalWrite(ledPin, HIGH);                   // LED 亮
     }
-    if (incomingByte == 'L') {                     // 如果讀進來的資料是 L
-      digitalWrite(ledPin, LOW);                   // LED 暗
+    if (incomingByte == 'L') {                      // 如果讀進來的資料是 L
+      digitalWrite(ledPin, LOW);                    // LED 暗
     }
   }
 }
