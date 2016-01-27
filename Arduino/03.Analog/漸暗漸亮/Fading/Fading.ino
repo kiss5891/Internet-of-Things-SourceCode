@@ -17,19 +17,19 @@
 
  */
 
-int ledPin = 9;                                             // LED 連接到引腳 9
+int ledPin = 9;                                                        // LED 連接到引腳 9
 
 void setup() {
 }
 
 void loop() {
-  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) {  // 設一個值 (範圍從 0 到 255) 從最小到最大, 每次增加 5
+  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) {         // 設一個值 (範圍從 0 到 255) 從最小到最大, 每次增加 5
     analogWrite(ledPin, fadeValue);
-    delay(30);                                                       // 等待 30 毫秒來觀看效果
+    delay(30);                                                         // 等待 30 毫秒來觀看效果
   }
-  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {  // 設一個值 (範圍從 0 到 255) 從最大到最小, 每次減少 5
+  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {         // 設一個值 (範圍從 0 到 255) 從最大到最小, 每次減少 5
     analogWrite(ledPin, fadeValue);
-    delay(30);                                                       // 等待 30 毫秒來觀看效果
+    delay(30);                                                         // 等待 30 毫秒來觀看效果
   }
 }
 
