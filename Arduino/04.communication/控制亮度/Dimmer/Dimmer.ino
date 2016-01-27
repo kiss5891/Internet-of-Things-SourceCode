@@ -18,20 +18,20 @@
 
  http://www.arduino.cc/en/Tutorial/Dimmer
 
- */
+*/
 
-const int ledPin = 9;      // LED 連接的引腳
+const int ledPin = 9;                                         // LED 連接的引腳
 
 void setup() {
-  Serial.begin(9600);            // 初始化序列通訊
-  pinMode(ledPin, OUTPUT);      // 初始化 ledPin 為輸出
+  Serial.begin(9600);                                         // 初始化序列通訊
+  pinMode(ledPin, OUTPUT);                                    // 初始化 ledPin 為輸出
 }
 
 void loop() {
   byte brightness;
-  if (Serial.available()) {      // 檢查如果電腦已發送數據
-    brightness = Serial.read();          // 閱讀最新的字節 (這必須是 0 到 255)
-    analogWrite(ledPin, brightness);    // 發送亮度到 LED
+  if (Serial.available()) {                                   // 檢查如果電腦已發送數據
+    brightness = Serial.read();                               // 閱讀最新的字節 (這必須是 0 到 255)
+    analogWrite(ledPin, brightness);                          // 發送亮度到 LED
   }
 }
 
@@ -49,7 +49,7 @@ void setup() {
   size(256, 150);
 
   println("Available serial ports:");
-  println(Serial.list());    // 如果使用 2.1 或更高版本, 使用 Serial.printArray()
+  println(Serial.list());                                     // 如果使用 2.1 或更高版本, 使用 Serial.printArray()
 
 /* 
   使用 list 中的第一個端口 (數字 0).  更改選擇這個端口對應到你的 Arduino 板.
@@ -70,7 +70,7 @@ void draw() {
     stroke(i);
     line(i, 0, i, 150);
   }
-  port.write(mouseX);      // 寫單字節在 mouseX 的位置傳到序列端口
+  port.write(mouseX);                                         // 寫單字節在 mouseX 的位置傳到序列端口
 }
 */
 
