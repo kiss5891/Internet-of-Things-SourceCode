@@ -22,19 +22,19 @@
  */
 
 void setup() {
-  Serial.begin(31250);                                  // 設置 MIDI 胞率
+  Serial.begin(31250);                                        // 設置 MIDI 胞率
 }
 
 void loop() {
-  for (int note = 0x1E; note < 0x5A; note ++) {         // 撥放音服從 F#-0 (0x1E) 到 F#-5 (0x5A)
-    noteOn(0x90, note, 0x45);                               // 音符通道 1 (0x90), 一些音符值 (note), 中速 (0x45)
+  for (int note = 0x1E; note < 0x5A; note ++) {               // 撥放音服從 F#-0 (0x1E) 到 F#-5 (0x5A)
+    noteOn(0x90, note, 0x45);                                 // 音符通道 1 (0x90), 一些音符值 (note), 中速 (0x45)
     delay(100);
-    noteOn(0x90, note, 0x00);                               // 音符通道 1 (0x90), 一些音符值 (note), 靜音速度 (0x00)
+    noteOn(0x90, note, 0x00);                                 // 音符通道 1 (0x90), 一些音符值 (note), 靜音速度 (0x00)
     delay(100);
   }
 }
 
-void noteOn(int cmd, int pitch, int velocity) {     // 撥放一個 MIDI 音符. 不檢查 cmd 大於 127, 或數值小於 127
+void noteOn(int cmd, int pitch, int velocity) {               // 撥放一個 MIDI 音符. 不檢查 cmd 大於 127, 或數值小於 127
   Serial.write(cmd);
   Serial.write(pitch);
   Serial.write(velocity);
