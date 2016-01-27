@@ -38,17 +38,17 @@ void loop() {
     int blue = Serial.parseInt();
 
     if (Serial.read() == '\n') {                    // 尋找句子結尾的換行
-      red = 255 - constrain(red, 0, 255);          // 限制範圍在 0 - 255 
+      red = 255 - constrain(red, 0, 255);           // 限制範圍在 0 - 255 
       green = 255 - constrain(green, 0, 255);
       blue = 255 - constrain(blue, 0, 255);
 
-      analogWrite(redPin, red);                   // 控制 red 的亮度
-      analogWrite(greenPin, green);               // 控制 green 的亮度
-      analogWrite(bluePin, blue);                 // 控制 blue 的亮度
+      analogWrite(redPin, red);                     // 控制 red 的亮度
+      analogWrite(greenPin, green);                 // 控制 green 的亮度
+      analogWrite(bluePin, blue);                   // 控制 blue 的亮度
 
-      Serial.print(red, HEX);                     // 印出 red 的十六進位
-      Serial.print(green, HEX);                   // 印出 green 的十六進位
-      Serial.println(blue, HEX);                  // 印出 blue 的十六進位
+      Serial.print(red, HEX);                       // 印出 red 的十六進位
+      Serial.print(green, HEX);                     // 印出 green 的十六進位
+      Serial.println(blue, HEX);                    // 印出 blue 的十六進位
     }
   }
 }
