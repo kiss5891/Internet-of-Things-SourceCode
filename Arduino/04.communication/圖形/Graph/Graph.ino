@@ -21,15 +21,15 @@
  This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/Graph
- */
+*/
 
 void setup() {
-  Serial.begin(9600);               // 初始化序列通訊
+  Serial.begin(9600);                                           // 初始化序列通訊
 }
 
 void loop() {
-  Serial.println(analogRead(A0));   // 發送 A0 的值
-    delay(2);                         // 在上次讀取後等待兩毫秒穩定類比轉換數位
+  Serial.println(analogRead(A0));                               // 發送 A0 的值
+    delay(2);                                                   // 在上次讀取後等待兩毫秒穩定類比轉換數位
 }
 
 /* Processing code for this example
@@ -47,13 +47,13 @@ void loop() {
 
 import processing.serial.*;
 
-Serial myPort;              // 序列端口
-int xPos = 1;               // 曲線圖的水平位置
+Serial myPort;                                                  // 序列端口
+int xPos = 1;                                                   // 曲線圖的水平位置
 
 void setup () {
-  size(400, 300);                   // 設置窗口大小
+  size(400, 300);                                               // 設置窗口大小
 
-  println(Serial.list());           // 如果使用 Processing 2.1 或更高版本, 使用 Serial.printArray()
+  println(Serial.list());                                       // 如果使用 Processing 2.1 或更高版本, 使用 Serial.printArray()
 
 /*
   我知道我的 mac 上的序列總是在我的 Arduino 第一個端口
@@ -61,8 +61,8 @@ void setup () {
   打開任何你使用的端口
 * /
   myPort = new Serial(this, Serial.list()[0], 9600);
-  myPort.bufferUntil('\n');         // 不生成 serialEvent() 除非你得到新的一行字符
-  background(0);                    // 設至初始背景
+  myPort.bufferUntil('\n');                                     // 不生成 serialEvent() 除非你得到新的一行字符
+  background(0);                                                // 設至初始背景
  }
  
 void draw () {
@@ -71,17 +71,17 @@ void draw () {
 void serialEvent (Serial myPort) {
   String inString = myPort.readStringUntil('\n');
   if (inString != null) {
-    inString = trim(inString);        // 剪掉任何空白
-    float inByte = float(inString);   // 轉換 int 並 map 到螢幕高度
+    inString = trim(inString);                                  // 剪掉任何空白
+    float inByte = float(inString);                             // 轉換 int 並 map 到螢幕高度
     inByte = map(inByte, 0, 1023, 0, height);
-    stroke(127,34,255);               // 畫一條線
+    stroke(127,34,255);                                         // 畫一條線
     line(xPos, height, xPos, height - inByte);
     if (xPos >= width) {
       xPos = 0;
       background(0);
     }
     else {
-      xPos++;                             // 遞增水平位置
+      xPos++;                                                   // 遞增水平位置
     }
   }
 }
