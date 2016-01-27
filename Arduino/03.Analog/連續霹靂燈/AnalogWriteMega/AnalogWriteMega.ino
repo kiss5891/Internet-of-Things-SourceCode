@@ -19,20 +19,20 @@ const int highestPin = 13;
 
 void setup() {
   for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {
-    pinMode(thisPin, OUTPUT);                                           // 設置引腳 2 到 13 為輸出
+    pinMode(thisPin, OUTPUT);                                                 // 設置引腳 2 到 13 為輸出
   }
 }
 
 void loop() {
-  for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {     // 循環引腳
-    for (int brightness = 0; brightness < 255; brightness++) {              // 控制 thisPin 的 LED 亮度從暗到亮
+  for (int thisPin = lowestPin; thisPin <= highestPin; thisPin++) {           // 循環引腳
+    for (int brightness = 0; brightness < 255; brightness++) {                // 控制 thisPin 的 LED 亮度從暗到亮
       analogWrite(thisPin, brightness);
       delay(2);
     }
-    for (int brightness = 255; brightness >= 0; brightness--) {             // 控制 thisPin 的 LED 亮度從亮到暗
+    for (int brightness = 255; brightness >= 0; brightness--) {               // 控制 thisPin 的 LED 亮度從亮到暗
       analogWrite(thisPin, brightness);
       delay(2);
     }
-    delay(100);                                                         // LED 之間暫停
+    delay(100);                                                               // LED 之間暫停
   }
 }
