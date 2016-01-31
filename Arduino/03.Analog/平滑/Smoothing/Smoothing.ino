@@ -24,31 +24,31 @@
 */
 const int numReadings = 10;
 
-int readings[numReadings];      // 從類比輸入讀取
-int readIndex = 0;              // 當前讀數的指標
-int total = 0;                  // 所有讀數的和
-int average = 0;                // 平均
+int readings[numReadings];                                                          // 從類比輸入讀取
+int readIndex = 0;                                                                  // 當前讀數的指標
+int total = 0;                                                                      // 所有讀數的和
+int average = 0;                                                                    // 平均
 
 int inputPin = A0;
 
 void setup() {
-  Serial.begin(9600);                            // 初始化序列通訊
+  Serial.begin(9600);                                                               // 初始化序列通訊
   for (int thisReading = 0; thisReading < numReadings; thisReading++) {
-    readings[thisReading] = 0;                      // 所有數設為 0
+    readings[thisReading] = 0;                                                      // 所有數設為 0
   }
 }
 
 void loop() {
-  total = total - readings[readIndex];          // 減掉上一次讀取的值
-  readings[readIndex] = analogRead(inputPin);   // 讀取感應的值
-  total = total + readings[readIndex];          // 增加到總合
-  readIndex = readIndex + 1;                    // 前進到陣列中的下一個位置
-  if (readIndex >= numReadings) {               // 如果我們在數組的最後
-    readIndex = 0;                                  // 環繞到一開始
+  total = total - readings[readIndex];                                              // 減掉上一次讀取的值
+  readings[readIndex] = analogRead(inputPin);                                       // 讀取感應的值
+  total = total + readings[readIndex];                                              // 增加到總合
+  readIndex = readIndex + 1;                                                        // 前進到陣列中的下一個位置
+  if (readIndex >= numReadings) {                                                   // 如果我們在數組的最後
+    readIndex = 0;                                                                  // 環繞到一開始
   }
-  average = total / numReadings;                // 計算平均
-  Serial.println(average);                       // 以 ASCII 碼送到電腦
-  delay(1);                                     // 延遲讀取來維持穩定
+  average = total / numReadings;                                                    // 計算平均
+  Serial.println(average);                                                          // 以 ASCII 碼送到電腦
+  delay(1);                                                                         // 延遲讀取來維持穩定
 }
 
 

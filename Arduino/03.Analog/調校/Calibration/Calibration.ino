@@ -24,32 +24,32 @@
 
  */
 
-const int sensorPin = A0;    // 類比零建連接到這個引腳
-const int ledPin = 9;        // LED 連接到這個引腳
+const int sensorPin = A0;                                                 // 類比零建連接到這個引腳
+const int ledPin = 9;                                                     // LED 連接到這個引腳
 
-int sensorValue = 0;         // 類比零件的值
-int sensorMin = 1023;        // 最小值
-int sensorMax = 0;           // 最大值
+int sensorValue = 0;                                                      // 類比零件的值
+int sensorMin = 1023;                                                     // 最小值
+int sensorMax = 0;                                                        // 最大值
 
 void setup() {
-  pinMode(13, OUTPUT);                                              // 將 LED 打開, 以告知開始進行調校
+  pinMode(13, OUTPUT);                                                    // 將 LED 打開, 以告知開始進行調校
   digitalWrite(13, HIGH);
 
-  while (millis() < 5000) {                                         // 在五秒內進行調校
+  while (millis() < 5000) {                                               // 在五秒內進行調校
     sensorValue = analogRead(sensorPin);
-    if (sensorValue > sensorMax) {                                      // 記錄最大值
+    if (sensorValue > sensorMax) {                                        // 記錄最大值
       sensorMax = sensorValue;
     }
-    if (sensorValue < sensorMin) {                                      // 記錄最小值
+    if (sensorValue < sensorMin) {                                        // 記錄最小值
       sensorMin = sensorValue;
     }
   }
-  digitalWrite(13, LOW);                                            // 調校結束
+  digitalWrite(13, LOW);                                                  // 調校結束
 }
 
 void loop() {
-  sensorValue = analogRead(sensorPin);                              // 讀取類比零件
-  sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 255);     // 調校應用到類比零件讀數上
-  sensorValue = constrain(sensorValue, 0, 255);                     // 避免類比零件的值在調校範圍外
-  analogWrite(ledPin, sensorValue);                                 // 以調校後的值點亮 LED
+  sensorValue = analogRead(sensorPin);                                    // 讀取類比零件
+  sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 255);           // 調校應用到類比零件讀數上
+  sensorValue = constrain(sensorValue, 0, 255);                           // 避免類比零件的值在調校範圍外
+  analogWrite(ledPin, sensorValue);                                       // 以調校後的值點亮 LED
 }

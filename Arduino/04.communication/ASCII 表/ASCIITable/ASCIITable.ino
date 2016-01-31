@@ -18,16 +18,16 @@
 
  <http://www.zambetti.com>
 
- */
+*/
 void setup() {
-  Serial.begin(9600);                                   // 初始化序列和等待開口打開
-  while (!Serial) {                                     // 等待序列端口連接. 需要 USB 端口
+  Serial.begin(9600);                                           // 初始化序列和等待開口打開
+  while (!Serial) {                                             // 等待序列端口連接. 需要 USB 端口
     ; 
   }
-  Serial.println("ASCII Table ~ Character Map");        // 印出標題並換行
+  Serial.println("ASCII Table ~ Character Map");                // 印出標題並換行
 }
 
-int thisByte = 33;                                  // 第一個變數 ASCII 碼 '!' 是數字 33
+int thisByte = 33;                                              // 第一個變數 ASCII 碼 '!' 是數字 33
 /* 
   你也可以寫 ASCII 碼用單引號
   例如. '!' 一樣是 33, 所以你可以這樣使用:
@@ -57,18 +57,18 @@ void loop() {
 
 
   Serial.print(", hex: ");
-  Serial.print(thisByte, HEX);                          // 印出十六進位的字串 (基數 16)
+  Serial.print(thisByte, HEX);                                  // 印出十六進位的字串 (基數 16)
 
   Serial.print(", oct: ");
-  Serial.print(thisByte, OCT);                          // 印出八進位的字串 (基數 8)
+  Serial.print(thisByte, OCT);                                  // 印出八進位的字串 (基數 8)
 
   Serial.print(", bin: ");
-  Serial.println(thisByte, BIN);                        // 印出二進位的字串 (基數 2) 印出結束後換行
+  Serial.println(thisByte, BIN);                                // 印出二進位的字串 (基數 2) 印出結束後換行
 
-  if (thisByte == 126) {                               // 如果印出的最後一個字是 '~' 或 126, 就停止你也可以使用 if (thisByte == '~') {
+  if (thisByte == 126) {                                        // 如果印出的最後一個字是 '~' 或 126, 就停止你也可以使用 if (thisByte == '~') {
     while (true) {
       continue;
     }
   }
-  thisByte++;                                          // 去下一個字符
+  thisByte++;                                                   // 去下一個字符
 }
